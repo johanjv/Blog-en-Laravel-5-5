@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', 'blog');
+
+Auth::routes();
+
+Route::get('blog', 'Web\PageController@blog')->name('blog');
+
+Route::get('blog/{slug}', 'Web\PageController@post')->name('post');
+
