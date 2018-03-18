@@ -6,14 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    	protected $fillable = [
+    protected $fillable = [
+        'name', 'slug', 'body'
+    ];
 
-	'name', 'slug', 'body'
-
-	];
-
-    public function posts() {
-    	return $this->hasMany(Post::class);
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
-
 }
